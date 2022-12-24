@@ -1,4 +1,4 @@
-package Cars.mapackage.cars;
+package Cars.mypackage.cars;
 
 public class Car {
 
