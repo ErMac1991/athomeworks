@@ -12,5 +12,4 @@ public class DaysOfWeek {
 
     static String[] Week = new String[] {mon, tue, wen, thi, fri, sat, sun};
 
-
 }

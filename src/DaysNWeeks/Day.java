@@ -96,6 +96,7 @@ public class Day {
                 dayOfMonth = dayOfMonth - maxDaysInMonth;
                 month = months[i];;
             }
+
             if (dayOfMonth > maxDaysInMonth && i>=11) {
                 dateOutOfLimit = true;
                 i= i - 11;

@@ -22,5 +22,4 @@ public class Week {
         day7 = new Day(weekOfYear, 7);
     }
 
-
 }
