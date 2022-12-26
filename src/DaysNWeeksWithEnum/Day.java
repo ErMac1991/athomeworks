@@ -1,4 +1,4 @@
-package DaysNWeeks;
+package DaysNWeeksWithEnum;
 
 public class Day {
     String dayOfWeek; // День недели. Не статическое
@@ -92,25 +92,26 @@ public class Day {
 
         if (dayOfMonth > maxDaysInMonth && i<11) {
 
-                i++;
-                dayOfMonth = dayOfMonth - maxDaysInMonth;
-                month = months[i];;
-            }
+            i++;
+            dayOfMonth = dayOfMonth - maxDaysInMonth;
+            month = months[i];;
+        }
 
-            if (dayOfMonth > maxDaysInMonth && i>=11) {
-                dateOutOfLimit = true;
-                i= i - 11;
-                month = months[i];
-                System.out.println("День " + (dayOfMonth - maxDaysInMonth) + " (месяц: " + month + ") принадлежит следующему году");
-            }
+        if (dayOfMonth > maxDaysInMonth && i>=11) {
+            dateOutOfLimit = true;
+            i= i - 11;
+            month = months[i];
+            System.out.println("День " + (dayOfMonth - maxDaysInMonth) + " (месяц: " + month + ") принадлежит следующему году");
+        }
 
-            if (dateOutOfLimit == false){
-                this.dayOfWeek = DaysOfWeek.Week[dayOfWeek-1];
-                System.out.println("" + this.dayOfWeek + " - " + dayOfMonth + " число (месяц: " + month + ")");
-            }
+        if (dateOutOfLimit == false){
+            this.dayOfWeek = DaysOfWeek.Week[dayOfWeek-1].DayOfWeek;
+            System.out.println("" + this.dayOfWeek + " - " + dayOfMonth + " число (месяц: " + month + ")");
+        }
 
         dateOutOfLimit = false;
         i=0;
 
     }
 }
+
