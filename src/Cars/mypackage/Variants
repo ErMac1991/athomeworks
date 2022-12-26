@@ -1,0 +1,10 @@
+1 - import static Cars.mypackage.cars.Car.move;
+    move();
+2 - import static Cars.mypackage.cars.Car.*;
+    move();
+3 - import Cars.mypackage.cars.Car;
+    Car.move();
+4 - import Cars.mypackage.cars.*;
+    Car.move();
+5 - (без импорта)
+    Cars.mypackage.cars.Car.move();
