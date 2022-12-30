@@ -1,6 +1,5 @@
 package DaysNWeeksWithEnum;
 
-
 public enum DaysOfWeek {
 
     MON("Понедельник"),

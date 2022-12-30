@@ -1,8 +1,6 @@
 package DaysNWeeks;
-
 public class Week {
     int weekOfYear; // не статическое
-
     Day day1;
     Day day2;
     Day day3;
