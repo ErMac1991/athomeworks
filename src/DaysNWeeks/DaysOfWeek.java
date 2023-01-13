@@ -1,7 +1,7 @@
 package DaysNWeeks;
 
 
-public class DaysOfWeek {
+public class DaysOfWeek { // Дни недели
     final static String mon = "Понедельник";
     final static String tue = "Вторник";
     final static String wen = "Среда";
