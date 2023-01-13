@@ -23,10 +23,8 @@ public abstract class Animal {
 
     public String toString(){ //вовзращает в виде строки текущую информацию об особи. Формат вывода: <Кличка>, Страна обитания: ...
                                 // Состояние здоровья: ... ,  Сколько особей: .
-        String info = "";
-        return info;
+        return "";
 
     }
-
 
 }
