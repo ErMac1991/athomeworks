@@ -1,7 +1,7 @@
 package DaysNWeeks;
 
 public class Week {
-    int weekOfYear; // не статическое
+    int weekOfYear; // Порядковый номер недели в году. не статическое.
 
     Day day1;
     Day day2;
