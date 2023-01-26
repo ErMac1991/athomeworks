@@ -1,6 +1,12 @@
 package Animals;
 
 public enum HealthState {
-    HEALTHY,
-    UNHEALTHY
+    HEALTHY ("Здоров"),
+    UNHEALTHY ("Болен");
+
+    String healthStat;
+
+    HealthState (String healthStat){
+        this.healthStat = healthStat;
+    }
 }

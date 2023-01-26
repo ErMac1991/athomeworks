@@ -1,7 +1,7 @@
 package DaysNWeeks;
 
 public class Day {
-    String dayOfWeek; // День недели. Не статическое
+    String dayOfWeek; // День недели. Не статическое.
     int dayOfMonth; // Дата в месяце. Не статическое
     String month; // Месяц
     int maxDaysInMonth; // Число дней в месяце
