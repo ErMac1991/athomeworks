@@ -20,46 +20,43 @@ public class Main {
         int a = Integer.parseInt(args[0]);
         int b = Integer.parseInt(args[1]);
         int c = Integer.parseInt(args[2]);
-
-        getLongestSide(a, b, c);
-    }
-
-    public static void getLongestSide (int a, int b, int c){ // вычисляем самую длинную сторону треугольника
         int longestSide = a;
         int other1Side = b;
         int other2Side = c;
 
-        if (b>longestSide) {
+        // вычисляем самую длинную сторону треугольника
+
+        if (b > longestSide) {
             longestSide = b;
             other1Side = a;
         }
-        if (c>longestSide) {
+        if (c > longestSide) {
             longestSide = c;
             other1Side = a;
             other2Side = b;
         }
-        isPossible (longestSide, other1Side, other2Side);
-    }
 
-    public static void isPossible(int a, int b, int c){ // выясняем существует ли треугольник
-        if (a >= b + c || a <= 0 || b <= 0 || c <= 0){
+        // выясняем существует ли треугольник
+
+        if (longestSide >= other1Side + other2Side || a <= 0 || b <= 0 || c <= 0) {
             System.out.println("impossible");
+            System.exit(0);
         }
-        else{
-            typeOfTriangle(a, b, c);
-        }
-    }
 
-    public static void typeOfTriangle (int a, int b, int c){ // выясняем тип треугольника
+        // выясняем тип треугольника
 
-        if (a*a == b*b + c*c){
+        if (longestSide * longestSide == other1Side * other1Side + other2Side * other2Side) {
             System.out.println("right");
-        };
-        if (a*a < b*b + c*c){
+        }
+
+        if (longestSide * longestSide < other1Side * other1Side + other2Side * other2Side) {
             System.out.println("acute");
-        };
-        if (a*a > b*b + c*c){
+        }
+
+        if (longestSide * longestSide > other1Side * other1Side + other2Side * other2Side) {
             System.out.println("obtuse");
-        };
+        }
+
     }
 }
+

@@ -15,45 +15,42 @@ package HW243.ChangeCount;
 
 public class Main {
     public static void main(String[] args) {
-        int a = Integer.parseInt(args[0]);
-        int b = Integer.parseInt(args[1]);
-        int c = Integer.parseInt(args[2]);
-        int d = Integer.parseInt(args[3]);
+        int priceRub = Integer.parseInt(args[0]); // Стоимость товара (руб)
+        int priceKop = Integer.parseInt(args[1]); // Стоимость товара (коп)
+        int moneyRub = Integer.parseInt(args[2]); // Заплачено за товар (руб)
+        int moneyKop = Integer.parseInt(args[3]); // Заплачено за товар (коп)
 
-        isPossible(a, b, c, d);
+        int[] values = new int[]{priceRub, priceKop, moneyRub, moneyKop};
 
-    }
+         // проверка на ввод корректных значений
 
-    public static void isPossible (int a, int b, int c, int d){ // проверка на ввод корректных значений
-        boolean error = false;
-        int[] values = new int[] {a, b, c, d};
-        for(int i = 0; i < 4; i++) {
-            if (values[i] < 0) {
-                System.out.println("" + (i+1) + "-е значение указано неверно.");
-                error = true;
+            for (int i = 0; i < 4; i++) {
+                if (values[i] < 0) {
+                    System.out.println("" + (i + 1) + "-е значение указано неверно.");
+                    System.out.println("Программа будет прервана");
+                    System.exit(0);
+                }
             }
-        }
 
-        if (error){
-            System.out.println("Программа будет прервана");
-        }
-        else {
-            isCashEnough((a*100 + b), (c*100 + d));
+        // проверка на то, что денег хватает на покупку? с переводом в копейки
+
+        priceKop = priceRub * 100 + priceKop;
+        moneyKop = moneyRub * 100 + moneyKop;
+
+            if (priceKop > moneyKop) {
+                System.out.println("Уплаченной суммы не хватает для оплаты товара");
+                System.exit(0);
+            }
+
+            if (priceKop == moneyKop) {
+                System.out.println("Сдачи после покупки не осталось");
+                System.exit(0);
+            }
+
+        // вычисление и вывод сдачи
+
+            System.out.println("Сдача составит " + ((moneyKop - priceKop) / 100) + " рублей и " + ((moneyKop - priceKop) % 100) + " копеек");
         }
     }
 
-    public static void isCashEnough(int b, int d){ // проверка на то, что денег хватает на покупку? с переводом в копейки
-        if (b > d) {
-            System.out.println("Уплаченной суммы не хватает для оплаты товара");
-        }
-        else {
-            changeCount(b, d);
-        }
 
-    }
-
-    public static void changeCount(int b, int d){ // вычисление и вывод сдачи
-        int change = d - b;
-        System.out.println("Сдача составит " + (change/100) + " рублей и " + (change%100) + " копеек");
-    }
-}
