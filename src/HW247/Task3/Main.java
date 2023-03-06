@@ -56,6 +56,7 @@ public class Main {
             } else {
                 for (int i = (col-1); i >=0; i--) {
                     if (line[i] !=0) System.out.print(line[i] + " ");
+                    else System.out.print("  ");
                 }
             }
 
